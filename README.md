@@ -11,8 +11,6 @@ gcc -Wall leadingZeros.c sha256.c -o leadingZero -lpthread
 ./leadingZero
 ```
 
-
-Compile leadingZeros
 # Running with shell script with sensors
 ```
 chmod +x run.sh
