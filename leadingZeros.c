@@ -9,7 +9,7 @@
 #include <math.h>
 
 #define NUMBER_OF_HASHES 1000000
-#define NUMBER_OF_THREADS 64
+#define NUMBER_OF_THREADS 4
 #define TIME_OF_EACH_BENCHMARK 2
 uint32_t nonce = 0;
 pthread_mutex_t nonce_mutex = PTHREAD_MUTEX_INITIALIZER;

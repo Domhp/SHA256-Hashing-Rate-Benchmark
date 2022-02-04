@@ -8,7 +8,7 @@
 #include "sha256benchmark.h"
 
 #define NUMBER_OF_HASHES 1000000
-#define NUMBER_OF_THREADS 64
+#define NUMBER_OF_THREADS 4
 uint32_t nonce = 0;
 pthread_mutex_t nonce_mutex = PTHREAD_MUTEX_INITIALIZER;
 int running_all_threads = 1;
