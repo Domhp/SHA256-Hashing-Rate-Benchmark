@@ -111,6 +111,10 @@ int benchmark(int leadingZeros){
     }else{
         target[(leadingZeros/2)] = 0xff;
     }
+    //fill rest of file with 1's
+    for(int i = ((int)leadingZeros/2) + 1; i < SHA256_BLOCK_SIZE; i++){
+        target[i] = 0xff;
+    }
     /*Below is copy of benchmark code, just sleeps for 10 mins*/
     pthread_t th[NUMBER_OF_THREADS];
     for (int i = 0; i < NUMBER_OF_THREADS; i++)
