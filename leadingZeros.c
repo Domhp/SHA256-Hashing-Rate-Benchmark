@@ -21,7 +21,7 @@ BYTE target[32] = {0}; //Used to check number of leading zeros
 BYTE target_base_copy[32] = {0}; //Used to copy empty array
 
 /*********************** FUNCTION DECLARATIONS **********************/
-int benchmark(int leadingZeros);
+int benchmark(int leading_zeros);
 void* func(void* x);
 double difficulty(const unsigned bits);
 int check_hash(BYTE hash[32]); //boolean
@@ -89,18 +89,18 @@ void* func(void* x){
 /**
  * @brief benchmarks for certain leading zeros, called each new leading zeros
  * Used TIME_OF_EACH_BENCHMARK in seconds
- * @param leadingZeros number of leading zeros in desired hash.
- * @return int number of hashes with "leadingZeros" leading zeros.
+ * @param leading_zeros number of leading zeros in desired hash.
+ * @return int number of hashes with "leading_zeros" leading zeros.
  */
-int benchmark(int leadingZeros){
+int benchmark(int leading_zeros){
     //Check odd leading, if, sett last to 0x0F
-    if(leadingZeros % 2){
-        target[(leadingZeros/2)] = 0x0f;
+    if(leading_zeros % 2){
+        target[(leading_zeros/2)] = 0x0f;
     }else{
-        target[(leadingZeros/2)] = 0xff;
+        target[(leading_zeros/2)] = 0xff;
     }
     //fill rest of file with 1's
-    for(int i = ((int)leadingZeros/2) + 1; i < SHA256_BLOCK_SIZE; i++){
+    for(int i = ((int)leading_zeros/2) + 1; i < SHA256_BLOCK_SIZE; i++){
         target[i] = 0xff;
     }
     /*Below is copy of benchmark code, just sleeps for 10 mins*/

@@ -115,57 +115,8 @@ void benchmark(int threads){
     nonce = 0;
     hashes_found = 0;
     free(th);
-
-    // const int size_hash = sizeof(hash);
-    // for (int i = 0; i < size_hash; i++)
-    // {
-    //     printf("%02X", hash[i]);
-    // }
-    // printf("\n");
-
 }
-/**
- * @brief benchmarks for certain leading zeros, called each new leading zeros
- * Used TIME_OF_EACH_BENCHMARK in seconds
- * @param leadingZeros number of leading zeros in desired hash.
- * @return int number of hashes with "leadingZeros" leading zeros.
- */
-// int benchmark(int leadingZeros){
-//     //Check odd leading, if, sett last to 0x0F
-//     if(leadingZeros % 2){
-//         target[(leadingZeros/2)] = 0x0f;
-//     }else{
-//         target[(leadingZeros/2)] = 0xff;
-//     }
-//     /*Below is copy of benchmark code, just sleeps for 10 mins*/
-//     pthread_t th[threads];
-//     for (int i = 0; i < threads; i++)
-//     {
-//         if(pthread_create(&th[i], NULL, &func, NULL) != 0){
-//             perror("Failed to create a Thread");
-//         }
-//     }
-//     sleep(TIME_OF_EACH_BENCHMARK);
-//     //Stop all threads running
-//     pthread_mutex_lock(&running_mutex);
-//     running_all_threads = 0; 
-//     pthread_mutex_unlock(&running_mutex);
 
-//     for (int i = 0; i < threads; i++)
-//     {
-//         if(pthread_join(th[i], NULL) != 0){
-//             perror("Failed to join a Thread");
-//         }
-//     }
-
-//     int result = hashes_found;
-//     /*Resets state */
-//     running_all_threads = 1;
-//     nonce = 0;
-//     hashes_found = 0;
-//     memcpy(target, target_base_copy, 32); //reset by just copying empty array for ease
-//     return result;
-// }
 
 /**
  * @brief prints 32 byte hash, doesnt check for length.
